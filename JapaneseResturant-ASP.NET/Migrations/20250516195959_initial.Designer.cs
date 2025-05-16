@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JapaneseResturant_ASP.NET.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250516164306_initial")]
+    [Migration("20250516195959_initial")]
     partial class initial
     {
         /// <inheritdoc />

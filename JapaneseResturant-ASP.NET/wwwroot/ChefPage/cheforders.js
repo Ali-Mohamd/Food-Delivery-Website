@@ -1,4 +1,4 @@
-﻿import { authFetch, tokenCheck } from "/Modules/token.js";
+﻿import { authFetch, tokenCheck } from "/Modules/extentions.js";
 
     // Sample orders data
 let orders = [];
@@ -23,7 +23,7 @@ async function getOrders() {
     if (response.ok) {
 
         orders = await response.json();
-=        renderOrders();
+        renderOrders();
     }
     else {
         showNotification('something went wrong', response.text());
@@ -127,7 +127,7 @@ function filterOrders(status) {
 
 // Update order status
 async function updateOrderStatus(orderId, newStatus) {
-=    const response = await authFetch('updateorderstatus', {
+    const response = await authFetch('updateorderstatus', {
 
         method: 'POST',
         headers: {
@@ -142,22 +142,6 @@ async function updateOrderStatus(orderId, newStatus) {
         showNotification('something went wrong', response.text());
     }
 }
-//async function getStatus(orderId) {
-//    var status;
-//    const response = await authFetch('getnextstatus', {
-
-//        method: 'GET',
-//        headers: {
-//            "Content-Type": "application/json"
-//        },
-//        body: orderId
-//    })
-//    if (response.ok) {
-//        return await response.json();
-//    }
-//    return null;
-//}
-// Show notification
 function showNotification(message) {
     const notificationContainer = document.getElementById('notificationContainer');
     const notification = document.createElement('div');

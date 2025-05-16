@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="errorBox" style="display: none; color: red; margin-top: 10px;"></div>
     <!-- Navigation -->
     <header class="navbar">
         <div class="container">
@@ -84,6 +85,13 @@
         </div>
     </section>
 
+    <!-- Popup container -->
+    <div id="popup-overlay">
+        <div id="popup">
+            <div id="popup-message"></div>
+        </div>
+    </div>
+
     <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
@@ -94,6 +102,13 @@
             <div class="cart-items" id="cartItems">
                 <!-- Cart items will be dynamically added here -->
             </div>
+
+            <label style=" padding-left: 5px;">Add Note :</label>
+            <textarea id="noteInput" placeholder="Your Note....."
+                      style="width: 100%; padding: 12px 12px; margin: 8px 0px;  display: inline-block; border: 1.5px solid #ccc; border-radius: 4px; box-sizing: border-box;"></textarea>
+
+
+
             <div class="cart-footer">
                 <div class="cart-total">
                     <span>Total:</span>
@@ -121,7 +136,6 @@
             </div>
         </div>
     </div>
-    <!-- Note widget -->
     <!-- Ingredients Modal -->
     <div class="modal" id="ingredientsModal">
         <div class="modal-overlay"></div>
@@ -141,30 +155,6 @@
         </div>
     </div>
 
-    <!-- Trigger Button -->
-    <button class="btn btn-primary" id="openNoteModalBtn">Add Note</button>
-
-    <!-- Note Modal -->
-    <div class="modal" id="noteModal">
-        <div class="modal-overlay" id="noteModalOverlay"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Add a Note</h3>
-                <button class="modal-close" id="closeNoteModalBtn">&times;</button>
-            </div>
-            <div class="modal-body" style="padding: 20px;">
-                <form id="noteForm">
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="noteInput" style="display: block; margin-bottom: 10px; font-weight: 500;">Note</label>
-                        <textarea id="noteInput" name="note" rows="5" placeholder="Write your note here..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;"></textarea>
-                    </div>
-                    <div style="text-align: right;">
-                        <button type="submit" class="btn btn-primary">Save Note</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <script type="module" src="/UserPage/dashboard.js"></script>
 </body>

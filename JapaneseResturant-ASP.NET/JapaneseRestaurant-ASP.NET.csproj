@@ -9,9 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\**" />
     <Compile Remove="StaticFiles\**" />
+    <Content Remove="Migrations\**" />
     <Content Remove="StaticFiles\**" />
+    <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="StaticFiles\**" />
+    <None Remove="Migrations\**" />
     <None Remove="StaticFiles\**" />
   </ItemGroup>
 

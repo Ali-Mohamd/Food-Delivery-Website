@@ -1,6 +1,5 @@
 ﻿async function regenerateToken() {
     var refreshToken = sessionStorage.getItem("refreshToken");
-    console.log(refreshToken);
     if (!refreshToken) {
         alert("You need to login again!")
         return;
@@ -31,7 +30,6 @@
 }
 export async function authFetch(input, init = {}) {
     let token = sessionStorage.getItem('accessToken');
-    console.log(token);
     init.headers = {
         ...(init.headers || {}),
         'Authorization': `Bearer ${token}`,
@@ -61,4 +59,22 @@ export function tokenCheck() {
         window.location.replace('/SignIn/signin.html');  // no token → redirect
         return;
     }
+}
+
+export function showError(message) {
+    const errorBox = document.getElementById("errorBox");
+    errorBox.textContent = message;
+    errorBox.style.display = "block";
+}
+export function showPopup(message) {
+    document.getElementById('popup-message').innerText = message;
+    document.getElementById('popup-overlay').style.display = 'block';
+
+    // Auto-close the popup after ~seconds
+    setTimeout(closePopup, 1000);
+}
+
+
+function closePopup() {
+    document.getElementById('popup-overlay').style.display = 'none';
 }
